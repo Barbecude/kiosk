@@ -1,0 +1,127 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="msapplication-TileColor" content="#00bcd4">
+    <title>KIOSK by @medic</title>
+     
+    <link type="text/css" rel="stylesheet" href="http://192.168.200.200/devel7/bamed/kioskv2/include/styles/ma/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="http://192.168.200.200/devel7/bamed/kioskv2/include/js/jqgrid5/css/ui.jqgrid-bootstrap.css" />
+    <link rel="stylesheet" href="http://192.168.200.200/devel7/bamed/kioskv2/include/js/jqwidgets3.6/jqwidgets/styles/jqx.base.css" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="http://192.168.200.200/devel7/bamed/kioskv2/include/styles/ma/materialadmin.css" />
+    <link href="http://192.168.200.200/devel7/bamed/kioskv2/include/font/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://192.168.200.200/devel7/bamed/kioskv2/include/styles/ma/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="http://192.168.200.200/devel7/bamed/kioskv2/include/styles/ma/plugins/node-waves/waves.min.css" />
+    <link href="http://192.168.200.200/devel7/bamed/kioskv2/include/styles/ma/plugins/bootstrap-datepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="http://192.168.200.200/devel7/bamed/kioskv2/include/styles/ma/plugins/select2/select2.css" />
+    <link type="text/css" rel="stylesheet" href="http://192.168.200.200/devel7/bamed/kioskv2/include/styles/ma/custom_style.css" />
+
+    <script type="text/javascript" src="http://192.168.200.200/devel7/bamed/kioskv2/include/js/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="http://192.168.200.200/devel7/bamed/kioskv2/include/styles/ma/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="http://192.168.200.200/devel7/bamed/kioskv2/include/js/jqgrid5/js/i18n/grid.locale-id.js"></script>
+    <script src="http://192.168.200.200/devel7/bamed/kioskv2/include/js/jqgrid5/js/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="http://192.168.200.200/devel7/bamed/kioskv2/include/js/jqwidgets3.6/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="http://192.168.200.200/devel7/bamed/kioskv2/include/js/jqwidgets3.6/jqwidgets/jqx-all.js"></script>
+    <script type="text/javascript" src="http://192.168.200.200/devel7/bamed/kioskv2/include/styles/ma/plugins/node-waves/waves.min.js"></script>
+    <script type="text/javascript" src="http://192.168.200.200/devel7/bamed/kioskv2/include/styles/ma/plugins/bootstrap-datepicker/moment.min.js"></script>
+    <script type="text/javascript" src="http://192.168.200.200/devel7/bamed/kioskv2/include/styles/ma/plugins/bootstrap-datepicker/id.js"></script>
+    <script type="text/javascript" src="http://192.168.200.200/devel7/bamed/kioskv2/include/styles/ma/plugins/bootstrap-datepicker/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="http://192.168.200.200/devel7/bamed/kioskv2/include/styles/ma/plugins/select2/select2.full.min.js"></script>
+    <script type="text/javascript" src="http://192.168.200.200/devel7/bamed/kioskv2/include/styles/ma/plugins/spin.js/spin.min.js"></script>
+    <script type="text/javascript" src="http://192.168.200.200/devel7/bamed/kioskv2/include/styles/ma/plugins/bootbox.min.js"></script>
+    <script type="text/javascript" src="http://192.168.200.200/devel7/bamed/kioskv2/include/styles/ma/plugins/jquery.inputmask.bundle.min.js"></script>
+    <script type="text/javascript" src="http://192.168.200.200/devel7/bamed/kioskv2/include/js/jquery-ui.min.js"></script>
+<!--    <script type="text/javascript" src="http://192.168.200.200/devel7/bamed/kioskv2/include/js/standard_lib.js"></script> -->
+    <script type="text/javascript">function base_url(){return 'http://192.168.200.200/devel7/bamed/kioskv2/';}</script>
+    <style type="text/css">
+    .swal-icon--error__line{opacity: 1;}
+    </style>
+</head>
+
+<body>
+    <div id="loader-wrapper">
+        <div id="loader"></div>        
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <div class="modal fade" id="popupcx" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-body" id="bodycx"></div>
+        </div>
+    </div>
+    <div id="popupcx2" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"></h4>
+          </div>
+          <div class="modal-body" id="bodycx2"></div>
+          <div class="modal-footer">
+            <div class="card-actionbar-row-left">
+                <button type="button" class="btn btn-flat" data-dismiss="modal"><i class="fa fa-window-close"></i> Tutup</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="container-fluid">
+        <link rel="stylesheet" href="http://192.168.200.200/devel7/bamed/kioskv2/include/kiosk/styles/frame.css" crossorigin="anonymous">
+      <script>
+         //function to fix height of iframe!
+         var calcHeight = function() {
+           //var headerDimensions = 0; //$('#header-bar').height();
+           $('#preview-frame').height($(window).height());
+         }
+         
+         $(document).ready(function() {
+           calcHeight();
+           /*$('#header-bar a.close').mouseover(function() {
+             $('#header-bar a.close').addClass('activated');
+           }).mouseout(function() {
+             $('#header-bar a.close').removeClass('activated');
+           });*/
+         }); 
+         
+         $(window).resize(function() {
+           calcHeight();
+         }).load(function() {
+           calcHeight();
+         });
+         
+      $(document).ready(function(){
+       $(".fullscreen_button").on("click", function() 
+       {
+        document.fullScreenElement && null !== document.fullScreenElement || !document.mozFullScreen && !document.webkitIsFullScreen ? document.documentElement.requestFullScreen ? document.documentElement.requestFullScreen() : document.documentElement.mozRequestFullScreen ? document.documentElement.mozRequestFullScreen() : document.documentElement.webkitRequestFullScreen && document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT) : document.cancelFullScreen ? document.cancelFullScreen() : document.mozCancelFullScreen ? document.mozCancelFullScreen() : document.webkitCancelFullScreen && document.webkitCancelFullScreen()
+       });  
+      });         
+      </script>
+
+ <div class="fullscreen-bg">
+      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="http://192.168.200.200/devel7/bamed/kioskv2/include/kiosk/video/bg2.webm" type="video/mp4">
+      </video>
+      <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+          <div class="w-100 text-white">
+            <h1 class="display-3">Video Header</h1>
+            <p class="lead mb-0">With HTML5 Video and Bootstrap 4</p>
+          </div>
+        </div>
+      </div>  
+  </div>
+
+<!--       <button class="fullscreen_button" style="position: absolute;right: 2em">Fullscreen</button>
+ -->    
+   <iframe id="preview-frame" src="http://192.168.200.200/devel7/bamed/kioskv2/kioskv2" name="preview-frame" frameborder="0" noresize="noresize" style="height: 100%;"></iframe>
+
+    </div>
+    <script src="http://192.168.200.200/devel7/bamed/kioskv2/include/styles/ma/js/App.js"></script>
+</body>
+</html>
